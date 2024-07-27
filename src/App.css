@@ -43,7 +43,9 @@
   padding: 20px;
   display: inline-block;
   background: #f9f9f9;
-  max-width: 300px;
+  width: 200px;
+  height: 200px;
+  overflow: auto;
 }
 
 .cards-container {
