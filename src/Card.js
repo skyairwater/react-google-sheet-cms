@@ -5,7 +5,7 @@ function Card({announcement}) {
         <h5>{announcement.Date}</h5>
         <h4>{announcement.Name}</h4>
         <p>{announcement.Description}</p>
-        <p><a href={announcement.Url} target="_blank">Website</a></p>
+        <p><a href={announcement.Url} rel="noreferrer" target="_blank">Website</a></p>
       </div>
     );
   }
