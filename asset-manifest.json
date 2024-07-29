@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/react-google-sheet-cms/static/css/main.b8f07cb1.css",
+    "main.js": "/react-google-sheet-cms/static/js/main.82b086ed.js",
+    "static/js/453.127b7cd3.chunk.js": "/react-google-sheet-cms/static/js/453.127b7cd3.chunk.js",
+    "static/media/loader.gif": "/react-google-sheet-cms/static/media/loader.498cd99ad931708d9695.gif",
+    "index.html": "/react-google-sheet-cms/index.html",
+    "main.b8f07cb1.css.map": "/react-google-sheet-cms/static/css/main.b8f07cb1.css.map",
+    "main.82b086ed.js.map": "/react-google-sheet-cms/static/js/main.82b086ed.js.map",
+    "453.127b7cd3.chunk.js.map": "/react-google-sheet-cms/static/js/453.127b7cd3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b8f07cb1.css",
+    "static/js/main.82b086ed.js"
+  ]
+}
