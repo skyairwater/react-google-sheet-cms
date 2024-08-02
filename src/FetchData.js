@@ -1,13 +1,13 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import { React, useEffect, useState } from "react";
+import Header from "./Header";
 import Card from './Card';
 import Loader from "./Loader";
+
 
 function FetchData()
 {
     const[records, setRecords] = useState([]);    
-    const [isDataLoading, setIsDataLoading] = useState(true);
-    const [displayHeader, setDisplayHeader] = useState(false);
+    const [isDataLoading, setIsDataLoading] = useState(true);    
 
     const googleAppScriptUrl ='https://script.google.com/macros/s/AKfycbw-28h69fv-Tx-clRfNOv-DwkDgE2kW9EU42nit0OfEC0I0jan4Y1RfM0X423DU3C9mHA/exec';
     
@@ -15,21 +15,15 @@ function FetchData()
         fetch(googleAppScriptUrl)
         .then(response => response.json())
         .then(data => setRecords(data))
-        .then(() => setIsDataLoading(false))
-        .then(() => setDisplayHeader(true))
+        .then(() => setIsDataLoading(false))        
         .catch(err => console.log(err));
     },[])
     
     return(           
       <>   
+          <Header />                
           {
-            displayHeader ? (<div>
-              <h4>https://www.linkedin.com/in/ananthwork/</h4>
-              <h4>Below data is obtained from Google Sheets through AppScripts API</h4>
-            </div>):null 
-          }        
-          {
-            isDataLoading ? <Loader />: records.map((item, index) => (<Card key={index} announcement={item}/>))
+            isDataLoading ? <Loader />: <Card announcements={records}/>
           }
       </>         
     )
