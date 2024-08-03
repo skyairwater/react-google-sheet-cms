@@ -1,0 +1,63 @@
+function doGet(e) 
+{   
+  let inputDate = e.parameter.inputDate;
+  
+  let announcementsArray;
+
+  if(!inputDate)
+    announcementsArray = GetSpreadsheetData();
+  else
+    announcementsArray = getAnnoucementByDate(inputDate);
+
+  var JSONString = JSON.stringify(announcementsArray);
+
+  //Logger.log(JSONString);
+
+  var JSONOutput = ContentService.createTextOutput(JSONString);
+  JSONOutput.setMimeType(ContentService.MimeType.JSON);
+  return JSONOutput;  
+}
+
+function getAnnoucementByDate(inputDate) 
+{
+  const annoucementsArray = GetSpreadsheetData();
+  
+  const announcementsByDate = [];
+  
+  annoucementsArray.forEach((announcement) => {
+    if(announcement.Date == inputDate)
+      announcementsByDate.push(announcement);
+  });
+
+  return announcementsByDate;
+}
+
+function GetSpreadsheetData()
+{
+  var sheet = SpreadsheetApp.getActiveSheet();
+  var data = sheet.getDataRange().getValues();
+  
+   var jsonArray = [];
+  
+  if (!data || data.length < 2) 
+    return jsonArray;   
+
+  var headers = data[0];
+
+  var annoucementArray = [];
+
+  for (var i = 1, length = data.length; i < length; i++) 
+  {
+    var row = data[i];
+    var record = {};
+
+    for (var j = 0; j < row.length; j++) 
+    {
+      record[headers[j]] = row[j];
+    }
+
+    annoucementArray.push(record);
+  }
+
+  return annoucementArray;
+}
