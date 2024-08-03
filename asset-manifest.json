@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/react-google-sheet-cms/static/css/main.b8f07cb1.css",
-    "main.js": "/react-google-sheet-cms/static/js/main.ea3d3884.js",
+    "main.css": "/react-google-sheet-cms/static/css/main.351bdafa.css",
+    "main.js": "/react-google-sheet-cms/static/js/main.03d72127.js",
     "static/js/453.127b7cd3.chunk.js": "/react-google-sheet-cms/static/js/453.127b7cd3.chunk.js",
     "static/media/loader.gif": "/react-google-sheet-cms/static/media/loader.498cd99ad931708d9695.gif",
     "index.html": "/react-google-sheet-cms/index.html",
-    "main.b8f07cb1.css.map": "/react-google-sheet-cms/static/css/main.b8f07cb1.css.map",
-    "main.ea3d3884.js.map": "/react-google-sheet-cms/static/js/main.ea3d3884.js.map",
+    "main.351bdafa.css.map": "/react-google-sheet-cms/static/css/main.351bdafa.css.map",
+    "main.03d72127.js.map": "/react-google-sheet-cms/static/js/main.03d72127.js.map",
     "453.127b7cd3.chunk.js.map": "/react-google-sheet-cms/static/js/453.127b7cd3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b8f07cb1.css",
-    "static/js/main.ea3d3884.js"
+    "static/css/main.351bdafa.css",
+    "static/js/main.03d72127.js"
   ]
 }
