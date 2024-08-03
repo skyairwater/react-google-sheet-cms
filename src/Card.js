@@ -6,9 +6,8 @@ function Card({announcements}) {
           announcements.map((announcement, index) => (
             <div key={index} className="card">
               <h5>{announcement.Date}</h5>
-              <h4>{announcement.Name}</h4>
-              <p>{announcement.Description}</p>
-              <p><a href={announcement.Url} rel="noreferrer" target="_blank">Website</a></p>
+              <h4>Token: {announcement.Name}</h4>
+              <p>{announcement.Description}</p>              
             </div>
           ))
         }

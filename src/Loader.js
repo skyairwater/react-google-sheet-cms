@@ -4,7 +4,7 @@ function Loader()
 {
     return (
         <div>
-            <h1 className="loadingText">Loading data from google sheets</h1>
+            <h1 className="loadingText">Refreshing data..</h1>
             <img alt="loader" src={loaderImg} className="loadingImg"></img>
         </div>
     );

@@ -2,7 +2,7 @@ import { React, useEffect, useState } from "react";
 import Header from "./Header";
 import Card from './Card';
 import Loader from "./Loader";
-
+import Timer from "./Timer";
 
 function FetchData()
 {
@@ -10,8 +10,6 @@ function FetchData()
     const [isDataLoading, setIsDataLoading] = useState(true);    
     const [count, setCount] = useState(30);
     const [showTimer, setShowTimer] = useState(true); 
-
-    const googleAppScriptUrl ='https://script.google.com/macros/s/AKfycbw-28h69fv-Tx-clRfNOv-DwkDgE2kW9EU42nit0OfEC0I0jan4Y1RfM0X423DU3C9mHA/exec';
     
     useEffect(() => { 
         const timerInterval = setInterval( () => 
@@ -21,11 +19,8 @@ function FetchData()
 
             setCount(count - 1);
 
-            if(count === 0)
-            {
-              //setCount(10);
-              GetDataFromGoogleSheets();
-            }
+            if(count === 0)             
+              GetDataFromGoogleSheets();            
 
         }, 1000);
         
@@ -37,13 +32,15 @@ function FetchData()
         
     async function GetDataFromGoogleSheets()
     {      
+      const googleAppScriptUrl ='https://script.google.com/macros/s/AKfycbw-28h69fv-Tx-clRfNOv-DwkDgE2kW9EU42nit0OfEC0I0jan4Y1RfM0X423DU3C9mHA/exec';
+      
       setIsDataLoading(true);
       setShowTimer(false);
       
       fetch(googleAppScriptUrl)
         .then(response => response.json())
         .then(data => setRecords(data))
-        .then(() => setIsDataLoading(false))        
+        .then(() => setIsDataLoading(false))                
         .catch(err => console.log(err));
 
         setCount(30);
@@ -51,17 +48,9 @@ function FetchData()
     }
     return(           
       <>   
-        {
-          showTimer ? (
-            <div style={{textAlign:"right"}}>
-              <h1>Refreshing the page in {count} seconds..</h1>
-            </div>
-          ): (<div></div>)          
-        }
-          <Header />                
-          {
-            isDataLoading ? <Loader />: <Card announcements={records}/>
-          }
+        { showTimer == true && <Timer counterValue={count} /> }
+        <Header />
+        {isDataLoading ? <Loader />: <Card announcements={records}/>}
       </>         
     )
 }
