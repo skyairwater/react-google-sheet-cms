@@ -48,7 +48,7 @@ function FetchData()
     }
     return(           
       <>   
-        { showTimer == true && <Timer counterValue={count} /> }
+        { showTimer === true && <Timer counterValue={count} /> }
         <Header />
         {isDataLoading ? <Loader />: <Card announcements={records}/>}
       </>         
